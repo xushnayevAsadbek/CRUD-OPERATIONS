@@ -1,0 +1,35 @@
+.card{
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    padding-top: 30px;
+}
+
+.card-box1 {
+    background: #F0F9FF;
+    border-radius: 8px;
+    width: 255px;
+    height: 157px;
+    padding: 24px 20px;
+}
+
+.card-box1__text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #6C6C6C;
+    margin-top: 19.75px;
+}
+
+.card-box1__heading {
+    margin-top: 10px;
+    text-align: right;
+    padding-bottom: 20px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    text-transform: uppercase;
+    color: #000000;
+}

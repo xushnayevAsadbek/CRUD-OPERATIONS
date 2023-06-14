@@ -1,0 +1,33 @@
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+    background-color: #FFFFFF;
+    /* position: relative;
+    right: 0;
+    left: 180px; */
+}
+
+.header-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-box--search {
+    border: none;
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 8px;
+    padding: 9px 15px 11px 8px;
+    width: 212px;
+    height: 37px;
+    margin-top: 12px;
+    margin-bottom: 11px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #C4C4C4;
+   outline: none;
+}
