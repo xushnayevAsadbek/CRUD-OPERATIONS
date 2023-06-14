@@ -1,5 +1,5 @@
 import { BellOutlined, PlayCircleOutlined, SearchOutlined } from '@ant-design/icons';
-import Sider from 'antd/es/layout/Sider';
+import img from './img/img.png'
 
 import './header.css'
 export const Header = () =>{
@@ -8,7 +8,16 @@ export const Header = () =>{
         <div className='sider'>
             <h1 className='sider-heading1'>CRUD OPERATIONS</h1>
             <div className='sider-img'>
-
+                <img style={{
+                    borderRadius:'50%',
+                    marginTop:'20px',
+                    padding:'0 60px  0 64px ',
+                   
+                }} src={img} alt="img" />
+                <h3 className='sider-heading3'>Karthi Madesh</h3>
+                <p>
+                Admin
+                </p>
             </div>
       </div>
         <div className='container' >

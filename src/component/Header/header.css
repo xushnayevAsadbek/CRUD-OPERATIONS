@@ -2,7 +2,7 @@
     float: left;
     width: 270px;
     height: 100vh;
-    background-color: #F2EAE1;;
+    background-color: #F2EAE1;
     position: fixed;
 }
 
@@ -14,12 +14,28 @@
     padding: 0 26.5px 0 10px;
     margin-left: 25px;
     margin-top: 18px;
+    margin-bottom: 27px;
     color: #000000;
     border-left: 4px solid #F8D442;
 }
 
-.sider-img{
-    
+.sider-img {
+    /* width: 141px; */
+    height: 214px;
+
+}
+
+.sider-heading3 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 21px;
+    color: #000000;
+    text-align: center;
+    padding:0  40px;
+    /* width: 130px; */
+    margin-right: 0;
 }
 
 .container {
