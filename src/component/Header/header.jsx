@@ -1,4 +1,4 @@
-import { BellOutlined, FileOutlined, HomeOutlined, PlayCircleOutlined, SearchOutlined } from '@ant-design/icons';
+import { BellOutlined, FileOutlined, HomeOutlined, LogoutOutlined, PlayCircleOutlined, SearchOutlined } from '@ant-design/icons';
 import img from './img/img.png'
 
 import './header.css'
@@ -76,6 +76,15 @@ export const Header = () =>{
                     Settings
                     </p>
                 </div>
+            </div>
+            <div style={{
+                position:'absolute',
+                bottom:'33px',
+                left:'80px'
+            }} >
+                <button className='sider-btn'>Logout   <LogoutOutlined style={{
+                    paddingLeft:'23px',
+                }} /></button>
             </div>
       </div>
         <div className='container' >

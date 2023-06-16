@@ -18,11 +18,11 @@ export const Card = () =>{
       <div className="card-box1">
         <img src={student} alt="img" />
         <p className='card-box1__text'>
-        Students
+        Course
         </p>
 
         <h2 className='card-box1__heading'>
-        243
+      13
         </h2>
       </div>
 
@@ -30,11 +30,11 @@ export const Card = () =>{
       <div className="card-box1">
         <img src={student} alt="img" />
         <p className='card-box1__text'>
-        Students
+        Payments
         </p>
 
         <h2 className='card-box1__heading'>
-        243
+        <sub>INR</sub> 556,000
         </h2>
       </div>
 
@@ -42,11 +42,11 @@ export const Card = () =>{
       <div className="card-box1">
         <img src={student} alt="img" />
         <p className='card-box1__text'>
-        Students
+        Users
         </p>
 
         <h2 className='card-box1__heading'>
-        243
+        3
         </h2>
       </div>
       </div>

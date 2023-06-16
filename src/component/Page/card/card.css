@@ -11,6 +11,7 @@
     width: 255px;
     height: 157px;
     padding: 24px 20px;
+    cursor: pointer;
 }
 
 .card-box1__text {

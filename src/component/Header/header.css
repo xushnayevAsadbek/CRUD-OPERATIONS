@@ -50,7 +50,7 @@
 }
 
 .sider-box {
-   
+
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -63,17 +63,32 @@
     width: 193px;
     height: 41px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
-.sider-box:hover{
+
+.sider-box:hover {
     background: #FEAF00;
     border-radius: 4px;
 }
-.sider-box:active{
+
+.sider-box:active {
     background: #FEAF00;
     border-radius: 4px;
 }
+
 .sider-box__text {
     padding-left: 15px;
+}
+
+.sider-btn {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    border: none;
+    background-color: #F2EAE1;
+    cursor: pointer;
 }
 
 .container {
