@@ -1,10 +1,12 @@
 import student from './card.img/student.png' ;
 import './card.css'
+import { NavLink } from 'react-router-dom';
 export const Card = () =>{
     return (
         <div className="container">
       <div className='card'>
-      <div className="card-box1">
+     <NavLink to="/student" >
+     <div className="card-box1">
         <img src={student} alt="img" />
         <p className='card-box1__text'>
         Students
@@ -14,6 +16,7 @@ export const Card = () =>{
         243
         </h2>
       </div>
+     </NavLink>
 
       <div className="card-box1">
         <img src={student} alt="img" />

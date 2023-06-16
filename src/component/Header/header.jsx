@@ -2,6 +2,7 @@ import { BellOutlined, FileOutlined, HomeOutlined, LogoutOutlined, PlayCircleOut
 import img from './img/img.png'
 
 import './header.css'
+import { NavLink } from 'react-router-dom';
 export const Header = () =>{
     return(
         <div>
@@ -40,15 +41,18 @@ export const Header = () =>{
                     Course
                     </p>
                 </div>
-                <div className='sider-box'>
+               
+
+               <NavLink  to="/student" className='sider-box'>
                 <HomeOutlined  style={{
                     paddingLeft:'45px',
                 }}/>
-
+                    
                     <p className='sider-box__text'> 
                     Students
                     </p>
-                </div>
+                 
+                </NavLink>
                 <div className='sider-box'>
                 <HomeOutlined  style={{
                     paddingLeft:'45px',
