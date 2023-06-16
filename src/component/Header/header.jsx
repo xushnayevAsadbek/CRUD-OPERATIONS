@@ -1,4 +1,4 @@
-import { BellOutlined, PlayCircleOutlined, SearchOutlined } from '@ant-design/icons';
+import { BellOutlined, FileOutlined, HomeOutlined, PlayCircleOutlined, SearchOutlined } from '@ant-design/icons';
 import img from './img/img.png'
 
 import './header.css'
@@ -15,9 +15,67 @@ export const Header = () =>{
                    
                 }} src={img} alt="img" />
                 <h3 className='sider-heading3'>Karthi Madesh</h3>
-                <p>
+                <p className='sider-text'>
                 Admin
                 </p>
+            </div>
+
+            <div>
+                <div className='sider-box'>
+                <HomeOutlined  style={{
+                    paddingLeft:'45px',
+                }}/>
+
+                    <p className='sider-box__text'> 
+                    Home
+                    </p>
+                </div>
+
+                <div className='sider-box'>
+                    <FileOutlined  style={{
+                    paddingLeft:'45px',
+                }}/>
+                    <p className='sider-box__text'> 
+                    
+                    Course
+                    </p>
+                </div>
+                <div className='sider-box'>
+                <HomeOutlined  style={{
+                    paddingLeft:'45px',
+                }}/>
+
+                    <p className='sider-box__text'> 
+                    Students
+                    </p>
+                </div>
+                <div className='sider-box'>
+                <HomeOutlined  style={{
+                    paddingLeft:'45px',
+                }}/>
+
+                    <p className='sider-box__text'> 
+                    Payment
+                    </p>
+                </div>
+                <div className='sider-box'>
+                <HomeOutlined  style={{
+                    paddingLeft:'45px',
+                }}/>
+
+                    <p className='sider-box__text'> 
+                    Report
+                    </p>
+                </div>
+                <div className='sider-box'>
+                <HomeOutlined  style={{
+                    paddingLeft:'45px',
+                }}/>
+
+                    <p className='sider-box__text'> 
+                    Settings
+                    </p>
+                </div>
             </div>
       </div>
         <div className='container' >
