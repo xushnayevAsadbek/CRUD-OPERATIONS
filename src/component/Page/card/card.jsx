@@ -5,7 +5,9 @@ export const Card = () =>{
     return (
         <div className="container">
       <div className='card'>
-     <NavLink to="/student" >
+     <NavLink to="/student" style={{
+      height:"160px",
+     }} >
      <div className="card-box1">
         <img src={student} alt="img" />
         <p className='card-box1__text'>
@@ -17,6 +19,9 @@ export const Card = () =>{
         </h2>
       </div>
      </NavLink>
+      <NavLink to="/course"  style={{
+      height:"160px",
+     }}>
 
       <div className="card-box1">
         <img src={student} alt="img" />
@@ -28,8 +33,7 @@ export const Card = () =>{
       13
         </h2>
       </div>
-
-
+      </NavLink>
       <div className="card-box1">
         <img src={student} alt="img" />
         <p className='card-box1__text'>

@@ -42,7 +42,7 @@ export const Header = ({ setMode }) => {
                         </p>
                     </div>
 
-                    <div className='sider-box'>
+                    <NavLink to="/course" className='sider-box' >
                         <FileOutlined style={{
                             paddingLeft: '45px',
                         }} />
@@ -50,7 +50,7 @@ export const Header = ({ setMode }) => {
 
                             Course
                         </p>
-                    </div>
+                    </NavLink>
 
 
                     <NavLink to="/student" className='sider-box'>
@@ -118,7 +118,7 @@ export const Header = ({ setMode }) => {
                         justifyContent: 'space-between',
                         alignItems: 'center',
                     }}>
-                        <select onChange={(e) => { setMode(e.target.value) 
+                        <select  className='select-dark' onChange={(e) => { setMode(e.target.value) 
                             localStorage.setItem('them' , e.target.value)
                          } }>
                             <option disabled selected >select</option>

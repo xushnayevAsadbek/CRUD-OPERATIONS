@@ -1,0 +1,39 @@
+
+
+.sudetnt-page--header{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e8d9d9;
+}
+
+.add--btn{
+    border-radius: 4px;
+    padding: 8px 12px;
+    border: none;
+    border:1px solid #E5E5E5;
+    background-color: #FEAF00;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 20px;
+}
+.back--btn{
+    border-radius: 4px;
+    padding: 8px 12px;
+    border: none;
+    border:1px solid #E5E5E5;
+    background-color: yellowgreen;
+    color: #fff;
+    cursor: pointer;
+}
+
+.add--btn:hover{
+    background-color: #fff;
+    color: #FEAF00;
+}
+
+.back--btn:hover{
+    background-color: greenyellow;
+    color: #fff;
+}

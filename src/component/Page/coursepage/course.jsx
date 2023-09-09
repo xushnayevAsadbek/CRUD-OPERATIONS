@@ -1,8 +1,6 @@
-
-import "./student.css"
 import { useNavigate } from "react-router-dom"
 
-export const StudentPage = () => {
+export const CoursePage = () => {
     const navigate =useNavigate();
     const onBack = () =>{
         navigate(-1)
@@ -13,11 +11,11 @@ export const StudentPage = () => {
        }}>
        <div className="sudetnt-page--header">
        <h1>
-       Students List
+       Course List
        </h1>
       <div>
       <button className="back--btn" onClick={onBack}>onBack</button>
-       <button className="add--btn"> ADD NEW STUDENT</button>
+       <button className="add--btn"> ADD NEW Course</button>
       </div>
        </div>
        </div>   

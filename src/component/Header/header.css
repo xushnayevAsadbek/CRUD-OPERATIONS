@@ -78,7 +78,7 @@
 
 .sider-box__text {
     padding-left: 15px;
-    
+
 }
 
 .sider-btn {
@@ -125,7 +125,16 @@
     outline: none;
 }
 
-.active{
+.active {
     background: #FEAF00;
     border-radius: 4px;
+}
+
+.select-dark {
+    width: 150px;
+    padding: 8px 10px;
+    border: none;
+    border: 1px solid #E5E5E5;
+    outline: none;
+    border-radius: 5px;
 }

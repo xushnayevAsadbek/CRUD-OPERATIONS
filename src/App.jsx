@@ -6,6 +6,7 @@ import { StudentPage } from "./component/Page/studentpageni"
 import { Error } from "./component/Page/Error"
 import { context } from "./context"
 import { useState } from "react"
+import { CoursePage } from "./component/Page/coursepage"
 
 function App() {
 
@@ -18,6 +19,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Card />} />
         <Route path="/student" element={ <StudentPage />} />
+        <Route path="/course" element={ <CoursePage/>} />
+
         <Route path="*" element={<Error/>} />
 
       </Routes>
