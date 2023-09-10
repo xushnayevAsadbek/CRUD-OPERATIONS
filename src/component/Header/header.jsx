@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { context } from '../../context';
 export const Header = ({ setMode }) => {
 
-    const { mode } = useContext(context)
+    const { mode } = useContext(context);
 
     const headerStyle = {
         backgroundColor: mode === 'Light' ? "black" : "white",
