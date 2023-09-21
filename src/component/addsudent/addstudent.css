@@ -2,3 +2,72 @@
     padding-top: 30px;
     padding-bottom: 15px;
 }
+
+.form--card{
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px 0 12px 10px;
+    margin-top: 20px;
+    /* width: 60%; */
+    font-size: 20px;
+    text-align: center;
+    
+
+}
+
+#task_title{
+    width: 700px;
+    padding: 10px;
+    border: 1px solid rgb(225, 224, 224);
+    overflow: hidden;
+    outline: none;
+    background-color: #E5E5E5;
+    border-radius: 5px;
+}
+#task_email{
+    width: 700px;
+    padding: 10px;
+    border: 1px solid rgb(225, 224, 224);
+    overflow: hidden;
+    outline: none;
+    background-color: #E5E5E5;
+    border-radius: 5px;
+}
+
+#task_phone{
+    width: 700px;
+    padding: 10px;
+    border: 1px solid rgb(225, 224, 224);
+    overflow: hidden;
+    outline: none;
+    background-color: #E5E5E5;
+    border-radius: 5px;
+}
+
+#task_enroll{
+    width: 700px;
+    padding: 10px;
+    border: 1px solid rgb(225, 224, 224);
+    overflow: hidden;
+    outline: none;
+    background-color: #E5E5E5;
+    border-radius: 5px;
+}
+#task_date{
+    width: 700px;
+    padding: 10px;
+    border: 1px solid rgb(225, 224, 224);
+    overflow: hidden;
+    outline: none;
+    background-color: #E5E5E5;
+    border-radius: 5px;
+}
+
+.form--card__btn{
+    background-color: yellowgreen;
+    color: green;
+    padding: 8px 10px;
+    border-radius: 20px;
+    border: none;
+    width: 150px;
+}

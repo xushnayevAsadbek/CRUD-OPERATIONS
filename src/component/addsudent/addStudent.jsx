@@ -18,13 +18,18 @@ export const AddStudent = () =>{
 
             <div>
             <form className="form" >
-                <label htmlFor="task_title" className="w-50 d-block mx-auto">
+               <div className="form--card">
+               <label htmlFor="task_title" className="w-50 d-block mx-auto">
                     <p>Enter task name</p>
                     <input type="text"
                         id="task_title"
                         
                     />
                 </label>
+               </div>
+               <div className="form--card">
+
+               
                 <label htmlFor="task_email" >
                     <p>Enter task email</p>
                     <input type="email"
@@ -34,7 +39,9 @@ export const AddStudent = () =>{
                         
                     />
                 </label>
-                <label htmlFor="task_phone">
+                </div>
+               <div className="form--card">
+               <label htmlFor="task_phone">
                     <p className="text-primary fw-bold text-uppercase">Enter task phone</p>
                     <input type="tel"
                         required
@@ -43,8 +50,21 @@ export const AddStudent = () =>{
                         
                     />
                 </label>
-
-                <label htmlFor="task_date">
+               </div>
+                <div className="form--card">
+                <label htmlFor="task_enroll">
+                    <p className="text-primary fw-bold text-uppercase">Enter task enroll</p>
+                    <input type="number"
+                        required
+                        id="task_enroll"
+                        className="form-control p-3 w-100"
+                        
+                        
+                    />
+                </label>
+                </div>
+               <div className="form--card">
+               <label htmlFor="task_date">
                     <p className="text-primary fw-bold text-uppercase">Enter task date</p>
                     <input type="date"
                         required
@@ -53,7 +73,10 @@ export const AddStudent = () =>{
                        
                     />
                 </label>
-                <button >Add new task  </button>
+               </div>
+              <div className="form--card">
+              <button  className="form--card__btn">Add new task  </button>
+              </div>
             </form>
             </div>
         </div>

@@ -3,17 +3,17 @@ import img from './img/img.png'
 import './header.css'
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
-import { context } from '../../context';
-export const Header = ({ setMode }) => {
+// import { context } from '../../context';
+export const Header = () => {
 
-    const { mode } = useContext(context);
+    // const { mode } = useContext(context);
 
-    const headerStyle = {
-        backgroundColor: mode === 'Light' ? "black" : "white",
-        color: mode === 'Light' ? "white" : "black"
-    }
+    // const headerStyle = {
+    //     backgroundColor: mode === 'Light' ? "black" : "white",
+    //     color: mode === 'Light' ? "white" : "black"
+    // }
 
-    console.log(headerStyle);
+    // console.log(headerStyle);
     return (
         <div>
             <div className='sider'>
@@ -102,7 +102,7 @@ export const Header = ({ setMode }) => {
                 </div>
             </div>
             <div className='container' >
-                <div className='header-box' style={headerStyle}>
+                <div className='header-box'>
                     <p>
                         <PlayCircleOutlined style={{
                             color: '#C4C4C4',
@@ -118,9 +118,7 @@ export const Header = ({ setMode }) => {
                         justifyContent: 'space-between',
                         alignItems: 'center',
                     }}>
-                        <select  className='select-dark' onChange={(e) => { setMode(e.target.value) 
-                            localStorage.setItem('them' , e.target.value)
-                         } }>
+                        <select  className='select-dark'>
                             <option disabled selected >select</option>
                             <option>Light</option>
                             <option>Dark</option>
