@@ -1,8 +1,9 @@
 
 import "./sudent.css"
 import { useNavigate } from "react-router-dom"
+import { AddStudent } from "../../addsudent/addStudent";
 
-export const StudentPage = () => {
+export const StudentPage = ({task, name , email, phone , date}) => {
     const navigate =useNavigate();
     const onBack = () =>{
         navigate(-1)
@@ -23,7 +24,44 @@ export const StudentPage = () => {
        <button className="add--btn" onClick={canselback}> ADD NEW STUDENT</button>
       </div>
        </div>
-       <h5> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor veritatis nesciunt blanditiis tempora assumenda enim.</h5>
+       
+       <div className="shadow p-5 w-75 mx-auto">
+
+<table className="table" >
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Enrol Number</th>
+            <th>Date of admission </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody >
+
+        {task?.map((item)=>{
+            return(<>
+           
+<AddStudent>
+        <tr>
+            <td>{name={name}}</td>
+            <td>{email={email}}</td>
+            <td>{phone={phone}}</td>
+            <td>{date={date}}</td>
+            <td><button>Edit</button></td>
+            <td><button >Remove</button></td>
+        </tr>
+        </AddStudent>
+        </>
+            )
+        }) }
+
+    </tbody>
+</table>
+
+</div>
        </div>   
     )
 }

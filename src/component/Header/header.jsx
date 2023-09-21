@@ -119,7 +119,7 @@ export const Header = () => {
                         alignItems: 'center',
                     }}>
                         <select  className='select-dark'>
-                            <option disabled selected >select</option>
+                            <option disabled selected >Light/Dark</option>
                             <option>Light</option>
                             <option>Dark</option>
 
