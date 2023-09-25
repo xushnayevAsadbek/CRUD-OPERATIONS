@@ -8,6 +8,7 @@ import { context } from "./context"
 import { useState } from "react"
 import { CoursePage } from "./component/Page/coursepage"
 import { AddStudent } from "./component/addsudent"
+import { Payment } from "./component/Page/payment/payment"
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
         <Route path="/" element={<Card />} />
         <Route path="/student" element={ <StudentPage />} />
         <Route path="/course" element={ <CoursePage/>} />
-
+        <Route path="/payment" element={<Payment />}/>
         <Route path="/addstudent" element={<AddStudent/>}/>
         <Route path="*" element={<Error/>} />
 

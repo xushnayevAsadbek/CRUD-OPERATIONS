@@ -1,4 +1,4 @@
-import { BellOutlined, FileOutlined, HomeOutlined, LogoutOutlined, PlayCircleOutlined, SearchOutlined } from '@ant-design/icons';
+import { BellOutlined, FileOutlined, HomeOutlined, LogoutOutlined, PlayCircleOutlined, SearchOutlined, MoneyCollectOutlined } from '@ant-design/icons';
 import img from './img/img.png'
 import './header.css'
 import { NavLink } from 'react-router-dom';
@@ -63,15 +63,15 @@ export const Header = () => {
                         </p>
 
                     </NavLink>
-                    <div className='sider-box'>
-                        <HomeOutlined style={{
+                    <NavLink to="/payment" className='sider-box'>
+                        <MoneyCollectOutlined style={{
                             paddingLeft: '45px',
                         }} />
 
                         <p className='sider-box__text'>
                             Payment
                         </p>
-                    </div>
+                    </NavLink>
                     <div className='sider-box'>
                         <HomeOutlined style={{
                             paddingLeft: '45px',
