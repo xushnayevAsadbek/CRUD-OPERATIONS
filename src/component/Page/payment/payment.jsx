@@ -111,6 +111,34 @@ export const Payment = () => {
 
                             }} /></button></td>
                         </tr>
+                        <tr>
+                            <td>Karthi</td>
+                            <td>First</td>
+                            <td>0111235414</td>
+                            <td>INR 35,000</td>
+                            <td>INR 55,000</td>
+                            <td>08-Dec,2021</td>
+                            <td><button style={{
+                                border: "none"
+                            }}><EyeOutlined style={{
+                                color: "orange",
+
+                            }} /></button></td>
+                        </tr>
+                        <tr>
+                            <td>Karthi</td>
+                            <td>First</td>
+                            <td>0111235414</td>
+                            <td>INR 35,000</td>
+                            <td>INR 55,000</td>
+                            <td>08-Dec,2021</td>
+                            <td><button style={{
+                                border: "none"
+                            }}><EyeOutlined style={{
+                                color: "orange",
+
+                            }} /></button></td>
+                        </tr>
 
 
                     </tbody>
