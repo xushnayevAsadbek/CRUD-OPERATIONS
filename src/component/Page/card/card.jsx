@@ -34,7 +34,7 @@ export const Card = () =>{
         </h2>
       </div>
       </NavLink>
-      <div className="card-box1">
+      <NavLink to="/payment" className="card-box1">
         <img src={student} alt="img" />
         <p className='card-box1__text'>
         Payments
@@ -43,7 +43,7 @@ export const Card = () =>{
         <h2 className='card-box1__heading'>
         <sub>INR</sub> 556,000
         </h2>
-      </div>
+      </NavLink>
 
 
       <div className="card-box1">
