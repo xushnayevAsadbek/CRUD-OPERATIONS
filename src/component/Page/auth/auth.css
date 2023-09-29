@@ -1,5 +1,12 @@
+.auth--card {
+    background-color: #fff;
+    width: 470px;
+    margin: 50px auto;
+    border-radius: 15px;
+}
+
 .auth__heading {
-    border-left: 5px solid #F8D442;
+    border-left: 7px solid #F8D442;
     padding-left: 10px;
     font-family: 'Montserrat';
     font-style: normal;
@@ -9,11 +16,13 @@
     color: #000000;
 
 
+
 }
 
 .auth--heading--box {
     display: flex;
     justify-content: center;
+    padding-top: 50px;
 }
 
 .auth__text {
@@ -40,4 +49,100 @@
     display: flex;
     justify-content: center;
 
+}
+
+.auth--box {
+    margin-top: 50px;
+}
+
+.auth--box__email {
+    display: flex;
+    justify-content: center;
+}
+
+.auth--box__eamil-label {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #6C6C6C;
+
+}
+
+.auth--box__eamil-input {
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 4px;
+    padding: 8px;
+    width: 415px;
+    margin-top: 8px;
+
+}
+
+.auth--box__password {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.auth--box__password-label {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #6C6C6C;
+
+
+}
+
+.auth--box__password-input {
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 4px;
+    padding: 8px;
+    width: 415px;
+    margin-top: 8px;
+
+}
+
+.auth--box__btn{
+background: #FEAF00;
+border-radius: 4px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 17px;
+color: #FFFFFF;
+width: 415px;
+margin:30px 0 30px 27px ;
+padding: 10px;
+border: none;
+}
+.auth--box__btn:hover{
+    cursor: pointer;
+    background-color: #fff;
+    color: #FEAF00;
+    border: 1px solid #FEAF00;
+}
+
+.auth--box__text{
+    display: flex;
+    justify-content: center;
+  padding-bottom: 30px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+color: #6C6C6C;
+
+
+}
+.span{
+    color: #FEAF00;
+    padding-left: 3px;
 }
