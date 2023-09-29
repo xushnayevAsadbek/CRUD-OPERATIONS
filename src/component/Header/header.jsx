@@ -91,7 +91,7 @@ export const Header = () => {
                         </p>
                     </div>
                 </div>
-                <div style={{
+                <NavLink to="/auth/login" style={{
                     position: 'absolute',
                     bottom: '33px',
                     left: '80px'
@@ -99,7 +99,7 @@ export const Header = () => {
                     <button className='sider-btn'>Logout   <LogoutOutlined style={{
                         paddingLeft: '23px',
                     }} /></button>
-                </div>
+                </NavLink>
             </div>
             <div className='container' >
                 <div className='header-box'>

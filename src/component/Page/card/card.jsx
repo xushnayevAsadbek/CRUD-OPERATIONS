@@ -1,4 +1,7 @@
 import student from './card.img/student.png' ;
+import course from './card.img/bookmark.png';
+import payment from './card.img/payment.png';
+import user from './card.img/user.png';
 import './card.css'
 import { NavLink } from 'react-router-dom';
 export const Card = () =>{
@@ -23,8 +26,8 @@ export const Card = () =>{
       height:"160px",
      }}>
 
-      <div className="card-box1">
-        <img src={student} alt="img" />
+      <div className="card-box1 course">
+        <img src={course} alt="img" />
         <p className='card-box1__text'>
         Course
         </p>
@@ -34,8 +37,8 @@ export const Card = () =>{
         </h2>
       </div>
       </NavLink>
-      <NavLink to="/payment" className="card-box1">
-        <img src={student} alt="img" />
+      <NavLink to="/payment" className="card-box1 payment">
+        <img src={payment} alt="img" />
         <p className='card-box1__text'>
         Payments
         </p>
@@ -46,8 +49,8 @@ export const Card = () =>{
       </NavLink>
 
 
-      <div className="card-box1">
-        <img src={student} alt="img" />
+      <div className="card-box1--user">
+        <img src={user} alt="img" />
         <p className='card-box1__text'>
         Users
         </p>

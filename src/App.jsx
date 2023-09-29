@@ -9,6 +9,7 @@ import { useState } from "react"
 import { CoursePage } from "./component/Page/coursepage"
 import { AddStudent } from "./component/addsudent"
 import { Payment } from "./component/Page/payment/payment"
+import { Auth } from "./component/Page/auth/auth"
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/course" element={ <CoursePage/>} />
         <Route path="/payment" element={<Payment />}/>
         <Route path="/addstudent" element={<AddStudent/>}/>
+        <Route path="/auth/login" element={ <Auth/>}/>
         <Route path="*" element={<Error/>} />
 
       </Routes>

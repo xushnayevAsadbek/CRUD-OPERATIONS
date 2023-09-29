@@ -13,6 +13,20 @@
     padding: 24px 20px;
     cursor: pointer;
 }
+.card-box1--user{
+    background-color: #FEAF00;
+    border-radius: 8px;
+    width: 255px;
+    height: 157px;
+    padding: 24px 20px;
+    cursor: pointer;
+}
+.payment{
+    background-color: #FEFBEC; 
+}
+.course{
+    background-color:  #FEF6FB;
+}
 
 .card-box1__text {
     font-style: normal;
