@@ -44,6 +44,7 @@ export const Auth = () => {
                 type="email"
                 name="email"
                 id='email'
+                required
                 // value={formData.email}
                 // onChange={handleInputChange}
                 placeholder="Enter your email"
@@ -57,6 +58,7 @@ export const Auth = () => {
               <input className='auth--box__password-input'
                 type="password"
                 name="password"
+                required
                 // value={formData.password}
                 // onChange={handleInputChange}
                 placeholder="Enter your password"
