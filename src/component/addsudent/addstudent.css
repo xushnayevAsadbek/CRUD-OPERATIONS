@@ -71,3 +71,13 @@
     border: none;
     width: 150px;
 }
+
+.addCanselbtn{
+    border-radius: 25px;
+    padding: 8px 12px;
+    border: none;
+    border:1px solid #E5E5E5;
+    background-color: yellowgreen;
+    color: #fff;
+    cursor: pointer;
+}

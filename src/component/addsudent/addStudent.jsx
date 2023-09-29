@@ -46,7 +46,7 @@ export const AddStudent = () =>{
             <h2 className="sudetnt-page--add">
             </h2>
 
-            <button className="btn btn-susces" onClick={onBack}>onBack</button>
+            <button className="addCanselbtn" onClick={onBack}>onBack</button>
 
             <div>
             <form className="form" onSubmit={(e)=>addTask(e)} >
