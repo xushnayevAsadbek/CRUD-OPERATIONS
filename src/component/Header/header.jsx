@@ -2,16 +2,17 @@ import { BellOutlined, FileOutlined, HomeOutlined, LogoutOutlined, PlayCircleOut
 import img from './img/img.png'
 import './header.css'
 import { NavLink } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 // import { context } from '../../context';
 export const Header = () => {
 
     // const { mode } = useContext(context);
-
+    const selectRef = useRef(null);
     // const headerStyle = {
     //     backgroundColor: mode === 'Light' ? "black" : "white",
     //     color: mode === 'Light' ? "white" : "black"
     // }
+    console.log(selectRef?.current?.value);
 
     // console.log(headerStyle);
     return (
@@ -118,10 +119,10 @@ export const Header = () => {
                         justifyContent: 'space-between',
                         alignItems: 'center',
                     }}>
-                        <select  className='select-dark'>
-                            <option disabled selected >Light/Dark</option>
-                            <option>Light</option>
-                            <option>Dark</option>
+                        <select ref={selectRef} className='select-dark' >
+                            {/* <option disabled selected >Light/Dark</option> */}
+                            <option value="light">Light</option>
+                            <option value="dark">Dark</option>
 
                         </select>
                         <input className='header-box--search' type="search" placeholder='Search...' icon={<SearchOutlined />} />
