@@ -11,6 +11,7 @@ import { AddStudent } from "./component/addsudent"
 import { Payment } from "./component/Page/payment/payment"
 import { Auth } from "./component/Page/auth/auth"
 import { Layout } from "./component/Page/Layout/Layout"
+import { User } from "./component/Page/user"
 
 function App() {
 
@@ -29,6 +30,8 @@ function App() {
           <Route path="course" element={<CoursePage />} />
           <Route path="payment" element={<Payment />} />
           <Route path="addstudent" element={<AddStudent />} />
+          <Route path="user" element={<User />} />
+
         </Route>
 
         <Route path="/auth/login" element={<Auth />} />

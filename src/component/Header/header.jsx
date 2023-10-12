@@ -73,15 +73,17 @@ export const Header = () => {
                             Payment
                         </p>
                     </NavLink>
+                    <NavLink to="/user">
                     <div className='sider-box'>
                         <HomeOutlined style={{
                             paddingLeft: '45px',
                         }} />
 
                         <p className='sider-box__text'>
-                            Report
+                            User
                         </p>
                     </div>
+                    </NavLink>
                     <div className='sider-box'>
                         <HomeOutlined style={{
                             paddingLeft: '45px',

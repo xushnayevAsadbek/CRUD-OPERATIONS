@@ -26,7 +26,7 @@ export const Payment = () => {
 
                 <table className="table" style={{
                     width: "93%",
-                    
+
                 }}>
                     <thead>
                         <tr>
@@ -144,7 +144,7 @@ export const Payment = () => {
                     </tbody>
                 </table>
             </div>
-           
+
         </div>
     )
 }
