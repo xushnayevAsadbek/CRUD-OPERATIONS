@@ -13,6 +13,7 @@ import { Auth } from "./component/Page/auth/auth"
 import { Layout } from "./component/Page/Layout/Layout"
 import { User } from "./component/Page/user"
 import { useGuard } from "./component/hooks/useAuthGuard"
+import { Setting } from "./component/Page/setting"
 
 
 function App() {
@@ -44,7 +45,7 @@ function App() {
           <Route path="payment" element={<Payment />} />
           <Route path="addstudent" element={<AddStudent />} />
           <Route path="user" element={<User />} />
-
+          <Route path="setting" element={<Setting />} />
         </Route>
 
         <Route path="/auth/login" element={<Auth />} />
