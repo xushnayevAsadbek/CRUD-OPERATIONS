@@ -73,8 +73,7 @@ export const Header = () => {
                             Payment
                         </p>
                     </NavLink>
-                    <NavLink to="/user">
-                    <div className='sider-box'>
+                    <NavLink to="/user" className='sider-box'>
                         <HomeOutlined style={{
                             paddingLeft: '45px',
                         }} />
@@ -82,10 +81,8 @@ export const Header = () => {
                         <p className='sider-box__text'>
                             User
                         </p>
-                    </div>
                     </NavLink>
-                    <NavLink to="/setting">
-                       <div className='sider-box'>
+                    <NavLink to="/setting" className='sider-box'>
                         <HomeOutlined style={{
                             paddingLeft: '45px',
                         }} />
@@ -93,14 +90,14 @@ export const Header = () => {
                         <p className='sider-box__text'>
                             Settings
                         </p>
-                    </div> 
                     </NavLink>
                     
                 </div>
                 <NavLink to="/auth/login" style={{
                     position: 'absolute',
-                    bottom: '33px',
-                    left: '80px'
+                    bottom: '15px',
+                    left: '80px',
+                    
                 }} >
                     <button className='sider-btn'>Logout   <LogoutOutlined style={{
                         paddingLeft: '23px',
