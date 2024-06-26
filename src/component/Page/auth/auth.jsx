@@ -1,25 +1,69 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import LOGIN from '../../service/auth';
+import { ToastContainer ,  toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 import './auth.css'
 
 export const Auth = () => {
-  // const [formData, setFormData] = useState({
-  //   username: '',
-  //   email: '',
-  //   password: '',
-  // });
+  
+  const [username, setUsername] = useState(null);
+  const [pasword, setPasword] = useState(null);
 
-  // const handleInputChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormData({
-  //     ...formData,
-  //     [name]: value,
-  //   });
-  // };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // Handle registration logic here (e.g., API call)
-  // };
+  const redirect=useNavigate();
+
+
+  const userLogin = (e) => {
+   
+      e.preventDefault();
+
+      const userData = {
+          username: username,
+          password: pasword
+      }
+
+
+      if (userData.username.length === 0 || userData.password.length === 0) {
+          alert('Please enter a username and password');
+      } else {
+
+          LOGIN.auth(userData).then((res) => {
+              if(res.status===200) {
+                  localStorage.setItem('token', res.data.token);
+                   redirect("/");
+   
+              }
+          })
+      }
+      if(userData.username==='mor_2314' || userData.password==='83r5^_'){
+        toast('Saytga muvafaqatli kirdingiz', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          })
+      } else{
+        toast('Username yoki Password xato', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          })
+      }
+      ;
+      
+
+  }
 
   return (
     <div className='container'
@@ -39,14 +83,16 @@ export const Auth = () => {
 
           <div className='auth--box__email'>
             <label className='auth--box__eamil-label'>
-              Email <br />
+            UserName <br />
               <input className='auth--box__eamil-input'
                 type="email"
                 name="email"
                 id='email'
                 required
-                // value={formData.email}
-                // onChange={handleInputChange}
+                
+                onChange={
+                  (e) => setUsername(e.target.value)
+              }
                 placeholder="Enter your email"
               />
             </label>
@@ -59,19 +105,29 @@ export const Auth = () => {
                 type="password"
                 name="password"
                 required
-                // value={formData.password}
-                // onChange={handleInputChange}
+                onChange={
+                  (e) => setPasword(e.target.value)
+              }
                 placeholder="Enter your password"
               />
             </label>
           </div>
-          <button type="submit" className='auth--box__btn'>SIGN IN</button>
+          <div>
+          <button type="submit" className='auth--box__btn' onClick={
+                        (e) => userLogin(e)
+                    }>SIGN IN</button>
+                      
+
+          </div>
         </form>
         <p className='auth--box__text'>
         Forgot your password? <span className='span'>Reset Password</span>
         </p>
       </div>
      </div>
+     
+     <ToastContainer/>
+
     </div>
   );
 };

@@ -12,7 +12,7 @@ export const Header = () => {
     //     backgroundColor: mode === 'Light' ? "black" : "white",
     //     color: mode === 'Light' ? "white" : "black"
     // }
-    console.log(selectRef?.current?.value);
+    // console.log(selectRef?.current?.value);
 
     // console.log(headerStyle);
     return (

@@ -121,7 +121,9 @@ export const AddStudent = () =>{
 
             <div className="shadow p-5 w-75 mx-auto">
 
-<table className="table" >
+<table className="table" style={{
+    marginBottom:'25px'
+}} >
     <thead>
         <tr>
             <th>Name</th>
@@ -147,8 +149,8 @@ export const AddStudent = () =>{
             <td>{item.enrol}</td>
             <td>{item.date}</td>
 
-            <td><button>Edit</button></td>
-            <td><button >Remove</button></td>
+            <td><button className="edit--btn btn sider-btn  active">Edit</button></td>
+            <td><button className="delet--btn btn sider-btn active">Remove</button></td>
         </tr>
             )
         }) }
