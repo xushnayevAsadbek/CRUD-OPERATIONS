@@ -113,6 +113,7 @@ export const Header = () => {
                             height: '17.44px',
                             marginTop: '21.2px',
                             marginBottom: '20px',
+                            cursor:'pointer',
                         }} />
                     </p>
                     <div style={{
