@@ -1,6 +1,8 @@
 import { useState  } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import edit from '../../../public/pen.svg';
+import delet from '../../../public/trash.svg';
 import "./addstudent.css"
 
 export const AddStudent = () =>{
@@ -149,8 +151,8 @@ export const AddStudent = () =>{
             <td>{item.enrol}</td>
             <td>{item.date}</td>
 
-            <td><button className="edit--btn btn sider-btn  active">Edit</button></td>
-            <td><button className="delet--btn btn sider-btn active">Remove</button></td>
+            <td><button className="edit--btn "><img src={edit} alt="pen-icon" /></button></td>
+            <td><button className="edit--btn"><img src={delet} alt="delet icon" /></button></td>
         </tr>
             )
         }) }
