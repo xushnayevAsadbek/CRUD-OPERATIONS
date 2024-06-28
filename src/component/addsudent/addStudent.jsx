@@ -14,7 +14,10 @@ export const AddStudent = () =>{
         navigate(-1)
     }
 
-    const [task, setTask] = useState([]);
+    const [task, setTask] = useState(() => {
+        const saveTask = localStorage.getItem('task');
+        return saveTask ? JSON.parse(saveTask) : [];
+    });
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
@@ -29,7 +32,7 @@ export const AddStudent = () =>{
             email: email,
             phone: phone,
             enrol:enrol,
-            date: date
+            date: date,        
     }
 
     setTask([...task , newTask])
@@ -46,20 +49,43 @@ const removeTask = id => {
     let filterTask = task.filter(item => item.id !== id)
 
     setTask(filterTask);
-    toast.info(`joyingizni o'chirib tashladingiz`, {
+    toast.info(`You have deleted your information`, {
         autoClose: 1000,
     })
+    clearForm()
 
 }
-const editBtn = (id) => {
-    let findedElement = task.find(item => item.id === id);
-    let editText = prompt(null, `${findedElement}`);
-    if (editText && editText !== '') {
-        findedElement = editText;
-        setTask([...task]);
+
+const editTask = (id) => {
+    const updatedName = prompt('Yangi ismni kiriting:', task.find(item => item.id === id).name);
+    const updatedEmail = prompt('Yangi emailni kiriting:', task.find(item => item.id === id).email);
+    const updatedPhone = prompt('Yangi telefon raqamini kiriting:', task.find(item => item.id === id).phone);
+    const updatedEnrol = prompt('Yangi ta\'lim yo\'nalishini kiriting:', task.find(item => item.id === id).enrol);
+    const updatedDate = prompt('Yangi kirish sanasini kiriting:', task.find(item => item.id === id).date);
+
+    if (updatedName !== null && updatedEmail !== null && updatedPhone !== null && updatedEnrol !== null && updatedDate !== null) {
+        const updatedTasks = task.map(item => (
+            item.id === id ? { ...item, name: updatedName, email: updatedEmail, phone: updatedPhone, enrol: updatedEnrol, date: updatedDate } : item
+        ));
+        setTask(updatedTasks);
+        toast.success('Your information has been updated', {
+            autoClose: 1000,
+        });
     }
+    
 }
-// localStorage.setTask('task', JSON.stringify(task));
+
+const clearForm = () => {
+    setName('');
+    setEmail('');
+    setPhone('');
+    setEnrol('');
+    setDate('');
+}
+
+useEffect(() => {
+    localStorage.setItem('task', JSON.stringify(task));
+}, [task]);
     return(
         
         <div className="container" style={{
@@ -151,13 +177,13 @@ const editBtn = (id) => {
     <tbody >
         {task?.map((item)=>{
             return(
-        <tr>
+        <tr key={item.id}>
             <td>{item.name}</td>
             <td>{item.email}</td>
             <td>{item.phone}</td>
             <td>{item.enrol}</td>
             <td>{item.date}</td>
-            <td><button onClick={() => editBtn(`&{item.id}`)} className="edit--btn "><img src={edit} alt="pen-icon" /></button></td>
+            <td><button onClick={() => editTask(item.id)} className="edit--btn "><img src={edit} alt="pen-icon" /></button></td>
             <td><button type="sumbit" onClick={() => removeTask(item.id)} className="edit--btn"><img src={delet} alt="delet icon" /></button></td>
         </tr>
             )

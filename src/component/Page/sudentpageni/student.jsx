@@ -1,7 +1,8 @@
-
 import "./sudent.css"
 import { useNavigate } from "react-router-dom"
-import { AddStudent } from "../../addsudent/addStudent";
+// import AddStudent from "../../addsudent/addStudent";
+import edit from '../../../../public/pen.svg';
+import delet from '../../../../public/trash.svg';
 
 export const StudentPage = ({task, name , email, phone , date}) => {
     const navigate =useNavigate();
@@ -40,21 +41,21 @@ export const StudentPage = ({task, name , email, phone , date}) => {
         </tr>
     </thead>
     <tbody >
-
         {task?.map((item)=>{
-            return(<>
-           
-<AddStudent>
-        <tr>
-            <td>{name={name}}</td>
-            <td>{email={email}}</td>
-            <td>{phone={phone}}</td>
-            <td>{date={date}}</td>
-            <td><button>Edit</button></td>
-            <td><button >Remove</button></td>
+            return(
+                <AddStudent>
+
+                
+        <tr key={item.id}>
+            <td>{item.name}</td>
+            <td>{item.email}</td>
+            <td>{item.phone}</td>
+            <td>{item.enrol}</td>
+            <td>{item.date}</td>
+            <td><button onClick={() => editTask(item.id)} className="edit--btn "><img src={edit} alt="pen-icon" /></button></td>
+            <td><button type="sumbit" onClick={() => removeTask(item.id)} className="edit--btn"><img src={delet} alt="delet icon" /></button></td>
         </tr>
         </AddStudent>
-        </>
             )
         }) }
 
@@ -64,4 +65,4 @@ export const StudentPage = ({task, name , email, phone , date}) => {
 </div>
        </div>   
     )
-}
+ }
