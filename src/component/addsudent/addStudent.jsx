@@ -105,7 +105,7 @@ useEffect(() => {
                         id="task_title"
                         value={name}
                         onChange={(e => setName(e.target.value))}
-                        
+                        required
                     />
                 </label>
                </div>
