@@ -127,6 +127,9 @@ useEffect(() => {
                         required
                         id="task_phone"
                         value={phone}
+                        name="phone"
+                        placeholder="+998"
+                        pattern="[+]?[0-9]{3} [(][0-9]{2}[)] [0-9]{3}-[0-9]{2}-[0-9]{2}"
                         onChange={(e => setPhone(e.target.value))}
                     />
                 </label>
