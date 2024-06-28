@@ -1,6 +1,8 @@
 import { useState  } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer , toast} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import edit from '../../../public/pen.svg';
 import delet from '../../../public/trash.svg';
 import "./addstudent.css"
@@ -40,8 +42,18 @@ export const AddStudent = () =>{
     setDate('')
 
 }
+const removeTask = id => {
+    let filterTask = task.filter(item => item.id !== id)
+
+    setTask(filterTask);
+    toast.info(`joyingizni o'chirib tashladingiz`, {
+        autoClose: 1000,
+    })
+
+}
 // localStorage.setTask('task', JSON.stringify(task));
     return(
+        
         <div className="container" style={{
             backgroundColor:'#E5E5E5'
            }}>
@@ -64,8 +76,6 @@ export const AddStudent = () =>{
                 </label>
                </div>
                <div className="form--card">
-
-               
                 <label htmlFor="task_email" >
                     <p>Enter task email</p>
                     <input type="email"
@@ -73,7 +83,6 @@ export const AddStudent = () =>{
                         id="task_email"
                         value={email}
                         onChange={(e => setEmail(e.target.value))}
-                        
                     />
                 </label>
                 </div>
@@ -83,10 +92,8 @@ export const AddStudent = () =>{
                     <input type="tel"
                         required
                         id="task_phone"
-                        
                         value={phone}
                         onChange={(e => setPhone(e.target.value))}
-                        
                     />
                 </label>
                </div>
@@ -97,9 +104,7 @@ export const AddStudent = () =>{
                         required
                         id="task_enroll"
                         value={enrol}
-                        onChange={(e => setEnrol(e.target.value))}
-                        
-                        
+                        onChange={(e => setEnrol(e.target.value))}  
                     />
                 </label>
                 </div>
@@ -110,8 +115,7 @@ export const AddStudent = () =>{
                         required
                         id="task_date"
                         value={date}
-                        onChange={(e => setDate(e.target.value))}
-                       
+                        onChange={(e => setDate(e.target.value))}                   
                     />
                 </label>
                </div>
@@ -120,7 +124,6 @@ export const AddStudent = () =>{
               </div>
             </form>
             </div>
-
             <div className="shadow p-5 w-75 mx-auto">
 
 <table className="table" style={{
@@ -132,34 +135,29 @@ export const AddStudent = () =>{
             <th>Email</th>
             <th>Phone</th>
             <th>Enrol Number</th>
-
             <th>Date of admission </th>
             <th></th>
             <th></th>
         </tr>
     </thead>
     <tbody >
-
-        
         {task?.map((item)=>{
             return(
-
         <tr>
             <td>{item.name}</td>
             <td>{item.email}</td>
             <td>{item.phone}</td>
             <td>{item.enrol}</td>
             <td>{item.date}</td>
-
             <td><button className="edit--btn "><img src={edit} alt="pen-icon" /></button></td>
-            <td><button className="edit--btn"><img src={delet} alt="delet icon" /></button></td>
+            <td><button type="sumbit" onClick={() => removeTask(item.id)} className="edit--btn"><img src={delet} alt="delet icon" /></button></td>
         </tr>
             )
         }) }
 
     </tbody>
 </table>
-
+<ToastContainer />
 </div>
         </div>
     )
