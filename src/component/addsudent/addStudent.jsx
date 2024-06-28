@@ -57,11 +57,11 @@ const removeTask = id => {
 }
 
 const editTask = (id) => {
-    const updatedName = prompt('Yangi ismni kiriting:', task.find(item => item.id === id).name);
-    const updatedEmail = prompt('Yangi emailni kiriting:', task.find(item => item.id === id).email);
-    const updatedPhone = prompt('Yangi telefon raqamini kiriting:', task.find(item => item.id === id).phone);
-    const updatedEnrol = prompt('Yangi ta\'lim yo\'nalishini kiriting:', task.find(item => item.id === id).enrol);
-    const updatedDate = prompt('Yangi kirish sanasini kiriting:', task.find(item => item.id === id).date);
+    const updatedName = prompt('Enter task name new:', task.find(item => item.id === id).name);
+    const updatedEmail = prompt('Enter task email new:', task.find(item => item.id === id).email);
+    const updatedPhone = prompt('Enter task phone new:', task.find(item => item.id === id).phone);
+    const updatedEnrol = prompt('Enter task enrol new:', task.find(item => item.id === id).enrol);
+    const updatedDate = prompt('Enter task date new:', task.find(item => item.id === id).date);
 
     if (updatedName !== null && updatedEmail !== null && updatedPhone !== null && updatedEnrol !== null && updatedDate !== null) {
         const updatedTasks = task.map(item => (
