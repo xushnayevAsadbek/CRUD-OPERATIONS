@@ -51,6 +51,14 @@ const removeTask = id => {
     })
 
 }
+const editBtn = (id) => {
+    let findedElement = task.find(item => item.id === id);
+    let editText = prompt(null, `${findedElement}`);
+    if (editText && editText !== '') {
+        findedElement = editText;
+        setTask([...task]);
+    }
+}
 // localStorage.setTask('task', JSON.stringify(task));
     return(
         
@@ -149,7 +157,7 @@ const removeTask = id => {
             <td>{item.phone}</td>
             <td>{item.enrol}</td>
             <td>{item.date}</td>
-            <td><button className="edit--btn "><img src={edit} alt="pen-icon" /></button></td>
+            <td><button onClick={() => editBtn(`&{item.id}`)} className="edit--btn "><img src={edit} alt="pen-icon" /></button></td>
             <td><button type="sumbit" onClick={() => removeTask(item.id)} className="edit--btn"><img src={delet} alt="delet icon" /></button></td>
         </tr>
             )
