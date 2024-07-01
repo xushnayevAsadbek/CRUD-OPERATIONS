@@ -1,133 +1,258 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import LOGIN from '../../service/auth';
-import { ToastContainer ,  toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-
-import './auth.css'
-
+import './auth.css';
+import { Loader } from '../../loader';
 export const Auth = () => {
-  
-  const [username, setUsername] = useState(null);
-  const [pasword, setPasword] = useState(null);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [load, setLoad] = useState(false);
+  const redirect = useNavigate();
+  const userLogin = async (e) => {
+    e.preventDefault();
+    setLoad(true);
 
+    const userData = {
+      username: username,
+      password: password
+    };
 
-  const redirect=useNavigate();
-
-
-  const userLogin = (e) => {
-   
-      e.preventDefault();
-
-      const userData = {
-          username: username,
-          password: pasword
-      }
-
-
-      if (userData.username.length === 0 || userData.password.length === 0) {
-          alert('Please enter a username and password');
-      } else {
-
-          LOGIN.auth(userData).then((res) => {
-              if(res.status===200) {
-                  localStorage.setItem('token', res.data.token);
-                   redirect("/");
-   
-              }
-          })
-      }
-      if(userData.username==='mor_2314' || userData.password==='83r5^_'){
-        toast('Saytga muvafaqatli kirdingiz', {
+    if (userData.username.length === 0 || userData.password.length === 0) {
+      alert('Please enter a username and password');
+      setLoad(false);
+    } else {
+      try {
+        const res = await LOGIN.auth(userData);
+        if (res.status === 200) {
+          localStorage.setItem('token', res.data.token);
+          toast.success('Saytga muvafaqatli kirdingiz', {
+            position: "top-right",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+          setTimeout(() => {
+            setLoad(false);
+            redirect("/");
+          }, 1000); 
+        }
+      } catch (error) {
+        setLoad(false);
+        toast.error('Username yoki Password xato', {
           position: "top-right",
-          autoClose: 5000,
+          autoClose: 1000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
           theme: "light",
-          })
-      } else{
-        toast('Username yoki Password xato', {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-          })
+        });
+        console.error(error);
       }
-      ;
-      
-
-  }
+    }
+  };
 
   return (
-    <div className='container'
-      style={{
-        backgroundColor: '#E5E5E5'
-      }}>
-     <div className='auth--card'>
-     <div>
-        <div className='auth--heading--box'>
-          <h2 className='auth__heading'>CRUD OPERATIONS</h2>
+    <div className='container' style={{ backgroundColor: '#E5E5E5' }}>
+      {load && <Loader />}
+      <div className='auth--card'>
+        <div>
+          <div className='auth--heading--box'>
+            <h2 className='auth__heading'>CRUD OPERATIONS</h2>
+          </div>
+          <p className='auth__text'>Sign In</p>
+          <p className='auth__text1'>Enter your credentials to access your account</p>
         </div>
-        <p className='auth__text'>Sign In</p>
-        <p className='auth__text1'>Enter your credentials to access your account</p>
+        <div className='auth--box'>
+          <form>
+            <div className='auth--box__email'>
+              <label className='auth--box__eamil-label'>
+                UserName <br />
+                <input className='auth--box__eamil-input'
+                  type="text"
+                  name="username"
+                  id='username'
+                  required
+                  onChange={(e) => setUsername(e.target.value)}
+                  placeholder="Enter your username"
+                />
+              </label>
+            </div>
+            <div className='auth--box__password'>
+              <label className='auth--box__password-label'>
+                Password
+                <br />
+                <input className='auth--box__password-input'
+                  type="password"
+                  name="password"
+                  required
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter your password"
+                />
+              </label>
+            </div>
+            <div>
+              <button type="submit" className='auth--box__btn' onClick={(e) => userLogin(e)}>SIGN IN</button>
+            </div>
+          </form>
+          <p className='auth--box__text'>
+            Forgot your password? <span className='span'>Reset Password</span>
+          </p>
+        </div>
       </div>
-      <div className='auth--box'>
-        <form >
-
-          <div className='auth--box__email'>
-            <label className='auth--box__eamil-label'>
-            UserName <br />
-              <input className='auth--box__eamil-input'
-                type="email"
-                name="email"
-                id='email'
-                required
-                
-                onChange={
-                  (e) => setUsername(e.target.value)
-              }
-                placeholder="Enter your email"
-              />
-            </label>
-          </div>
-          <div className='auth--box__password'>
-            <label className='auth--box__password-label' >
-              Password
-              <br />
-              <input className='auth--box__password-input'
-                type="password"
-                name="password"
-                required
-                onChange={
-                  (e) => setPasword(e.target.value)
-              }
-                placeholder="Enter your password"
-              />
-            </label>
-          </div>
-          <div>
-          <button type="submit" className='auth--box__btn' onClick={
-                        (e) => userLogin(e)
-                    }>SIGN IN</button>
-                      
-
-          </div>
-        </form>
-        <p className='auth--box__text'>
-        Forgot your password? <span className='span'>Reset Password</span>
-        </p>
-      </div>
-     </div>
-     
-     <ToastContainer/>
-
+      <ToastContainer />
     </div>
   );
 };
+
+// import React, { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
+// import LOGIN from '../../service/auth';
+// import { ToastContainer ,  toast } from "react-toastify";
+// import 'react-toastify/dist/ReactToastify.css';
+
+// import './auth.css'
+// import { Loader } from '../../loader';
+
+// export const Auth = () => {
+  
+//   const [username, setUsername] = useState(null);
+//   const [pasword, setPasword] = useState(null);
+//   const [load, setLoad] = useState(false);
+
+
+//   const redirect=useNavigate();
+
+
+//   const userLogin = (e) => {
+   
+//       e.preventDefault();
+//       setLoad(true);
+
+//       const userData = {
+//           username: username,
+//           password: pasword
+//       }
+
+
+//       if (userData.username.length === 0 || userData.password.length === 0) {
+//           alert('Please enter a username and password');
+//           setLoad(false)
+//       } else {
+
+//           LOGIN.auth(userData).then((res) => {
+//               if(res.status===200) {
+//                   localStorage.setItem('token', res.data.token);
+//                    redirect("/");
+//                 setLoad(true);
+//               }
+//           }).catch((error) => {
+//             setLoad(false);
+//             console.error(error);
+//           });
+//       }
+//       if(userData.username==='mor_2314' && userData.password==='83r5^_'){
+//         toast('Saytga muvafaqatli kirdingiz', {
+//           position: "top-right",
+//           autoClose: 5000,
+//           hideProgressBar: false,
+//           closeOnClick: true,
+//           pauseOnHover: true,
+//           draggable: true,
+//           progress: undefined,
+//           theme: "light",
+//           });
+           
+//       } 
+//       else{
+//         toast('Username yoki Password xato', {
+//           position: "top-right",
+//           autoClose: 5000,
+//           hideProgressBar: false,
+//           closeOnClick: true,
+//           pauseOnHover: true,
+//           draggable: true,
+//           progress: undefined,
+//           theme: "light",
+//           })
+//       }
+//       ;
+      
+
+//   }
+
+//   return (
+    
+//     <div className='container'
+//       style={{
+//         backgroundColor: '#E5E5E5'
+//       }}>
+//         {load && <Loader />}
+//      <div className='auth--card'>
+//      <div>
+//         <div className='auth--heading--box'>
+//           <h2 className='auth__heading'>CRUD OPERATIONS</h2>
+//         </div>
+//         <p className='auth__text'>Sign In</p>
+//         <p className='auth__text1'>Enter your credentials to access your account</p>
+//       </div>
+//       <div className='auth--box'>
+//         <form >
+
+//           <div className='auth--box__email'>
+//             <label className='auth--box__eamil-label'>
+//             UserName <br />
+//               <input className='auth--box__eamil-input'
+//                 type="username"
+//                 name="username"
+//                 id='username'
+//                 required
+                
+//                 onChange={
+//                   (e) => setUsername(e.target.value)
+//               }
+//                 placeholder="Enter your username"
+//               />
+//             </label>
+//           </div>
+//           <div className='auth--box__password'>
+//             <label className='auth--box__password-label' >
+//               Password
+//               <br />
+//               <input className='auth--box__password-input'
+//                 type="password"
+//                 name="password"
+//                 required
+//                 onChange={
+//                   (e) => setPasword(e.target.value)
+//               }
+//                 placeholder="Enter your password"
+//               />
+//             </label>
+//           </div>
+//           <div>
+//           <button type="submit" className='auth--box__btn' onClick={
+//                         (e) => userLogin(e)
+//                     }>SIGN IN</button>
+                      
+
+//           </div>
+//         </form>
+//         <p className='auth--box__text'>
+//         Forgot your password? <span className='span'>Reset Password</span>
+//         </p>
+//       </div>
+//      </div>
+     
+//      <ToastContainer/>
+
+//     </div>
+//   );
+// };
