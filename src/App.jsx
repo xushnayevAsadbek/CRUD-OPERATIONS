@@ -21,7 +21,7 @@ function App() {
   
   const isAuth = useGuard();
   // const {pathname} = useLocation();
-  //   const navigate = useNavigate();
+    // const navigate = useNavigate();
   // const [mode, setMode] = useState(localStorage.getItem('them'));
   useEffect(() => {
       
@@ -36,8 +36,8 @@ function App() {
       {/* <Header /> */}
       
       <Routes>
+      <Route path="/auth/login" element={<Auth />} />
         <Route path="/" element={<Layout />}>
-          
           <Route index element={<Card />} />
           <Route path="student" element={<StudentPage />} />
           <Route path="student" element={<StudentPage />} />
@@ -47,13 +47,8 @@ function App() {
           <Route path="user" element={<User />} />
           <Route path="setting" element={<Setting />} />
         </Route>
-
-        <Route path="/auth/login" element={<Auth />} />
         <Route path="*" element={<Error />} />
-
       </Routes>
-      
-
     </BrowserRouter>
     //  </contex>
   )
