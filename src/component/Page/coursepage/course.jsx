@@ -19,37 +19,37 @@ export const CoursePage = () => {
       </div>
        </div>
        <div className="">
-       <table>
+       <table className="course-table">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Enrol Number</th>
-        <th>Date of admission</th>
+        <th className="course-th">Name</th>
+        <th className="course-th">Email</th>
+        <th className="course-th">Phone</th>
+        <th className="course-th">Enrol Number</th>
+        <th className="course-th">Date of admission</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>John</td>
-        <td>john@gmail.com</td>
-        <td>+998</td>
-        <td>New York</td>
-        <td>22.03.2021</td>
+        <td className="course-td">John</td>
+        <td className="course-td">john@gmail.com</td>
+        <td className="course-td">+998</td>
+        <td className="course-td">New York</td>
+        <td className="course-td">22.03.2021</td>
       </tr>
       <tr>
-        <td>Jane</td>
-        <td>jane@gmail.com</td>
-        <td>+998</td>
-        <td>York</td>
-        <td>22.03.2021</td>
+        <td className="course-td">Jane</td>
+        <td className="course-td">jane@gmail.com</td>
+        <td className="course-td">+998</td>
+        <td className="course-td">York</td>
+        <td className="course-td">22.03.2021</td>
       </tr>
       <tr>
-        <td>Mike</td>
-        <td>mike@gmail.com</td>
-        <td>+998</td>
-        <td>York</td>
-        <td>22.03.2021</td>
+        <td className="course-td">Mike</td>
+        <td className="course-td">mike@gmail.com</td>
+        <td className="course-td">+998</td>
+        <td className="course-td">York</td>
+        <td className="course-td">22.03.2021</td>
       </tr>
     </tbody>
   </table>
