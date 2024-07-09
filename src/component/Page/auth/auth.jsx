@@ -74,7 +74,7 @@ export const Auth = () => {
           <form>
             <div className='auth--box__email'>
               <label className='auth--box__eamil-label'>
-                UserName <br />
+                UserName(mor_2314) <br />
                 <input className='auth--box__eamil-input'
                   type="text"
                   name="username"
@@ -87,7 +87,7 @@ export const Auth = () => {
             </div>
             <div className='auth--box__password'>
               <label className='auth--box__password-label'>
-                Password
+                Password(83r5^_)
                 <br />
                 <input className='auth--box__password-input'
                   type="password"
@@ -99,7 +99,7 @@ export const Auth = () => {
               </label>
             </div>
             <div>
-              <button type="submit" className='auth--box__btn' onClick={(e) => userLogin(e)}>SIGN IN</button>
+              <button type="submit" className='auth--box__btn' onClick={(e) =>userLogin(e)}>SIGN IN</button>
             </div>
           </form>
           <p className='auth--box__text'>
