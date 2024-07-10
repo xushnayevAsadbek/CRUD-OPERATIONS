@@ -1,3 +1,4 @@
+import { EyeOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 
 
@@ -13,37 +14,126 @@ export const User = () => {
             <button className="back--btn mt-10 pt-9 active" style={{
           marginTop:'20px'
          }} onClick={onBack}>onBack</button>
-         <div style={{
-            display:'flex',
-            flexWrap:'column',
-            marginTop:'35px'
-         }}>
-         <div className="flex flex-wrap -m-4">
-      <div className="lg:w-1/3 sm:w-1/2 p-4">
-        <div className="flex relative">
-          <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/450x260"/>
-          <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-            <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">THE SUBTITLE</h2>
-            <h1 className="title-font text-lg font-medium text-gray-900 mb-3">Shooting Stars</h1>
-            <p className="leading-relaxed w-40">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-          </div>
-        </div>
-      </div>
-        </div>
-        <div className="flex flex-wrap -m-4">
-      <div className="lg:w-1/3 sm:w-1/2 p-4">
-        <div className="flex relative">
-          <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/450x260"/>
-          <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-            <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">THE SUBTITLE</h2>
-            <h1 className="title-font text-lg font-medium text-gray-900 mb-3">Shooting Stars</h1>
-            <p className="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-          </div>
-        </div>
-      </div>
-        </div>
-        
-         </div>
+          <table className="table" style={{
+                    width: "100%",
+                    marginLeft:'15px'
+
+                }}>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Payment Schedule</th>
+                            <th>Bill Number</th>
+                            <th>Amount Paid</th>
+                            <th>Balance amount </th>
+                            <th>Date</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody  >
+                        <tr >
+                            <td>Karthi</td>
+                            <td>First</td>
+                            <td>0111235414</td>
+                            <td>INR 35,000</td>
+                            <td>INR 55,000</td>
+                            <td>08-Dec,2021</td>
+                            <td><button style={{
+                                border: "none"
+                            }}><EyeOutlined style={{
+                                color: "orange",
+
+                            }} /></button></td>
+                        </tr>
+                        <tr>
+                            <td>Karthi</td>
+                            <td>First</td>
+                            <td>0111235414</td>
+                            <td>INR 35,000</td>
+                            <td>INR 55,000</td>
+                            <td>08-Dec,2021</td>
+                            <td><button style={{
+                                border: "none"
+                            }}><EyeOutlined style={{
+                                color: "orange",
+
+                            }} /></button></td>
+                        </tr>
+                        <tr>
+                            <td>Karthi</td>
+                            <td>First</td>
+                            <td>0111235414</td>
+                            <td>INR 35,000</td>
+                            <td>INR 55,000</td>
+                            <td>08-Dec,2021</td>
+                            <td><button style={{
+                                border: "none"
+                            }}><EyeOutlined style={{
+                                color: "orange",
+
+                            }} /></button></td>
+                        </tr>
+                        <tr>
+                            <td>Karthi</td>
+                            <td>First</td>
+                            <td>0111235414</td>
+                            <td>INR 35,000</td>
+                            <td>INR 55,000</td>
+                            <td>08-Dec,2021</td>
+                            <td><button style={{
+                                border: "none"
+                            }}><EyeOutlined style={{
+                                color: "orange",
+
+                            }} /></button></td>
+                        </tr>
+                        <tr>
+                            <td>Karthi</td>
+                            <td>First</td>
+                            <td>0111235414</td>
+                            <td>INR 35,000</td>
+                            <td>INR 55,000</td>
+                            <td>08-Dec,2021</td>
+                            <td><button style={{
+                                border: "none"
+                            }}><EyeOutlined style={{
+                                color: "orange",
+
+                            }} /></button></td>
+                        </tr>
+                        <tr>
+                            <td>Karthi</td>
+                            <td>First</td>
+                            <td>0111235414</td>
+                            <td>INR 35,000</td>
+                            <td>INR 55,000</td>
+                            <td>08-Dec,2021</td>
+                            <td><button style={{
+                                border: "none"
+                            }}><EyeOutlined style={{
+                                color: "orange",
+
+                            }} /></button></td>
+                        </tr>
+                        <tr>
+                            <td>Karthi</td>
+                            <td>First</td>
+                            <td>0111235414</td>
+                            <td>INR 35,000</td>
+                            <td>INR 55,000</td>
+                            <td>08-Dec,2021</td>
+                            <td><button style={{
+                                border: "none"
+                            }}><EyeOutlined style={{
+                                color: "orange",
+
+                            }} /></button></td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
          
         </div>
     )
