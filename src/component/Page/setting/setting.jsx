@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import 'react-toastify/dist/ReactToastify.css';
 export const Setting = () => {
   const navigate =useNavigate();
   const onBack = () =>{
@@ -42,7 +43,6 @@ export const Setting = () => {
         </div>
         
          </div>
-         
         </div>
     )
 }

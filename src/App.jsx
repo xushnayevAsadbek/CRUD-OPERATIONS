@@ -14,7 +14,7 @@ import { Layout } from "./component/Page/Layout/Layout"
 import { User } from "./component/Page/user"
 import { useGuard } from "./component/hooks/useAuthGuard"
 import { Setting } from "./component/Page/setting"
-
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
