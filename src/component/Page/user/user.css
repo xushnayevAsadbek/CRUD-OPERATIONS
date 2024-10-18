@@ -6,6 +6,7 @@
     margin-top: 25px;
     padding-bottom: 10px;
     line-height: 20px;
+    font-size: 38px;
 }
 .subjects-title:hover{
     transition: color 0.5s ease;
@@ -13,10 +14,26 @@
 }
 .subjects-text{
     font-weight: 600;
-    font-size: 22px;
+    font-size: 32px;
     color: #012;
+    margin-top: 15px;
 }
 .subjects-text:hover{
     color: rgb(67, 67, 249);
     transition: color 0.5s ease;
+}
+.subject-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+
+}
+.delete--btn{
+    background-color: rgb(252, 25, 25);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-top:5px;
 }

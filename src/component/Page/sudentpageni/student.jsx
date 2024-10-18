@@ -6,6 +6,7 @@ import edit from './img/pen.svg';
 import delet from './img/trash.svg';
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
 export const StudentPage = () => {
   const navigate = useNavigate();
   const [students, setStudents] = useState([]);
@@ -26,7 +27,7 @@ export const StudentPage = () => {
         autoClose: 1000,
     })
   };
-
+console.log(students);
 
   const handleEdit = (index) => {
     const studentToEdit = students[index];
@@ -86,7 +87,6 @@ export const StudentPage = () => {
                   <td>{student.email}</td>
                   <td>{student.phone}</td>
                   <td>{student.enrol}</td>
-                  <td>{student.date}</td>
                   <td>
                     <button className="edit--btn" onClick={() => handleEdit(index)}><img src={edit} alt="pen-icon" /></button>
                   </td>

@@ -2,6 +2,7 @@ import { useState  } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./addstudent.css"
+import AppSubject from "./addsubject";
 
 export const AddStudent = () =>{
 
@@ -9,14 +10,13 @@ export const AddStudent = () =>{
     const onBack = () =>{
         navigate(-1)
     }
-
     const [task, setTask] = useState([]);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [enrol, setEnrol] = useState('');
-    const [date, setDate] = useState('');
-
+   
+   
     const addTask = (e) => {
         e.preventDefault();
         const newTask = {
@@ -25,7 +25,6 @@ export const AddStudent = () =>{
             email: email,
             phone: phone,
             enrol:enrol,
-            date: date
     }
     const storedTasks = JSON.parse(localStorage.getItem("students")) || [];
     const updatedTasks = [...storedTasks, newTask];
@@ -40,7 +39,6 @@ export const AddStudent = () =>{
     setEmail('')
     setPhone('')
     setEnrol('')
-    setDate('')
 
 }
 // localStorage.setTask('task', JSON.stringify(task));
@@ -52,6 +50,7 @@ export const AddStudent = () =>{
             </h2>
 
             <button className="addCanselbtn" onClick={onBack}>onBack</button>
+            <AppSubject/>
 
             <div>
             <form className="form" onSubmit={(e)=>addTask(e)} >
@@ -106,8 +105,62 @@ export const AddStudent = () =>{
               </div>
             </form>
             </div>
-
             
+            {/* {isModalOpen && (
+                <div className="modal">
+                    <div className="modal-content">
+                        <span className="close" onClick={closeModal}>&times;</span>
+                        <h2>Add Student</h2>
+                        <form className="form" onSubmit={addTask}>
+                            <div className="form--card">
+                                <label htmlFor="task_title" className="w-50 d-block mx-auto">
+                                    <p>Mavzu nomi:</p>
+                                    <input type="text"
+                                        id="task_title"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                        placeholder="Mavzuni kiriting:"
+                                    />
+                                </label>
+                            </div>
+                            <div className="form--card">
+                                <label htmlFor="task_email">
+                                    <p>Document file:</p>
+                                    <input type="file"
+                                        required
+                                        id="task_email"
+                                        onChange={(e) => setEmail(e.target.files[0])}
+                                    />
+                                </label>
+                            </div>
+                            <div className="form--card">
+                                <label htmlFor="task_phone">
+                                    <p className="text-primary fw-bold text-uppercase">PPT file:</p>
+                                    <input type="file"
+                                        required
+                                        id="task_phone"
+                                        onChange={(e) => setPhone(e.target.files[0])}
+                                    />
+                                </label>
+                            </div>
+                            <div className="form--card">
+                                <label htmlFor="task_enroll">
+                                    <p className="text-primary fw-bold text-uppercase">Videoni</p>
+                                    <input type="file"
+                                        required
+                                        id="task_enroll"
+                                        onChange={(e) => setEnrol(e.target.files[0])}
+                                    />
+                                </label>
+                            </div>
+                            <div className="form--card mb-5">
+                                <button className="form--card__btn" type="submit">Add new task</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            )} */}
+
         </div>
-    )
+    );
 }

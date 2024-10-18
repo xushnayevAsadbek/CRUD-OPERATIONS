@@ -48,28 +48,24 @@ table {
     margin-left: 100px;
     border-collapse: collapse;
     width: 80%;
-    /* border: 1px solid #ccc; */
   }
   
   th, td {
     padding: 8px;
     text-align: left;
-    /* border: 1px solid #ccc; */
+  
   }
   
-  /* Header row styling */
   th {
     /* background-color: #f2f2f2; */
     color: #000;
     opacity: 0.6;
   }
   
-  /* Alternate row coloring */
   tbody tr:nth-child(even) {
     background-color: #f2f2f2;
   }
   
-  /* Hover effect on rows */
   tbody tr:hover {
     background-color: #e0e0e0;
   }

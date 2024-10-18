@@ -62,7 +62,7 @@ export const Header = () => {
                         }} />
 
                         <p className='sider-box__text'>
-                            Students
+                            Lesson
                         </p>
 
                     </NavLink>
@@ -81,7 +81,7 @@ export const Header = () => {
                         }} />
 
                         <p className='sider-box__text'>
-                            User
+                            Subject
                         </p>
                     </NavLink>
                     <NavLink to="/setting" className='sider-box'>
