@@ -1,10 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { Header } from "./component/Header"
 import { Card } from "./component/Page/card"
 import './App.css'
 import { StudentPage } from "./component/Page/sudentpageni"
 import { Error } from "./component/Page/Error"
-import { context } from "./context"
 import { useEffect } from "react"
 import { CoursePage } from "./component/Page/coursepage"
 import { AddStudent } from "./component/addsudent"

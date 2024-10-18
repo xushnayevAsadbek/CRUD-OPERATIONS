@@ -1,7 +1,10 @@
-.lds-spinner {
+/* .lds-spinner {
     color: official;
-    display: inline-block;
-    position: relative;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
     width: 80px !important;
     height: 80px !important;
     margin: 0 500px;
@@ -76,4 +79,28 @@
     100% {
       opacity: 0;
     }
-  }
+  } */
+
+  /* Ensure the container takes up the full height and width */
+.spinner-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically */
+    height: 100vh;           /* Full viewport height */
+}
+
+/* Spinner styling (example: a simple rotating circle) */
+.spinner {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+
+/* Add animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
