@@ -19,7 +19,7 @@ export const Header = () => {
         <div>
             <div className='sider'>
                 <h1 className='sider-heading1'>CRUD OPERATIONS</h1>
-                <NavLink to='/'>
+                <NavLink to='/auth/login'>
                 <div className='sider-img'>
                     <img style={{
                         borderRadius: '50%',

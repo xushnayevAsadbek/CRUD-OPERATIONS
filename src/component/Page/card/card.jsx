@@ -8,13 +8,13 @@ export const Card = () => {
   return (
     <div className="container">
       <div className='card'>
-        <NavLink to="/student" style={{
+        <NavLink to="/user" style={{
           height: "160px",
         }} >
           <div className="card-box1">
             <img src={student} alt="img" />
             <p className='card-box1__text'>
-              Students
+              Fanlar
             </p>
 
             <h2 className='card-box1__heading'>
@@ -48,11 +48,11 @@ export const Card = () => {
           </h2>
         </NavLink>
 
-        <NavLink to="/user" className="card-box1--user">
+        <NavLink to="/student" className="card-box1--user">
           
             <img src={user} alt="img" />
             <p className='card-box1__text'>
-              Users
+              Darslar
             </p>
 
             <h2 className='card-box1__heading'>

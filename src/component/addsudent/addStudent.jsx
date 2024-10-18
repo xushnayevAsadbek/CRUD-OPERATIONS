@@ -1,10 +1,6 @@
 import { useState  } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { ToastContainer , toast} from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-import edit from '../../../public/pen.svg';
-import delet from '../../../public/trash.svg';
 import "./addstudent.css"
 
 export const AddStudent = () =>{
@@ -14,10 +10,7 @@ export const AddStudent = () =>{
         navigate(-1)
     }
 
-    const [task, setTask] = useState(() => {
-        const saveTask = localStorage.getItem('task');
-        return saveTask ? JSON.parse(saveTask) : [];
-    });
+    const [task, setTask] = useState([]);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
@@ -32,8 +25,13 @@ export const AddStudent = () =>{
             email: email,
             phone: phone,
             enrol:enrol,
-            date: date,        
+            date: date
     }
+    const storedTasks = JSON.parse(localStorage.getItem("students")) || [];
+    const updatedTasks = [...storedTasks, newTask];
+    localStorage.setItem("students", JSON.stringify(updatedTasks));
+
+    navigate("/student", { state: newTask });
 
     setTask([...task , newTask])
     console.log(newTask);
@@ -45,49 +43,8 @@ export const AddStudent = () =>{
     setDate('')
 
 }
-const removeTask = id => {
-    let filterTask = task.filter(item => item.id !== id)
-
-    setTask(filterTask);
-    toast.info(`You have deleted your information`, {
-        autoClose: 1000,
-    })
-    clearForm()
-
-}
-
-const editTask = (id) => {
-    const updatedName = prompt('Enter task name new:', task.find(item => item.id === id).name);
-    const updatedEmail = prompt('Enter task email new:', task.find(item => item.id === id).email);
-    const updatedPhone = prompt('Enter task phone new:', task.find(item => item.id === id).phone);
-    const updatedEnrol = prompt('Enter task enrol new:', task.find(item => item.id === id).enrol);
-    const updatedDate = prompt('Enter task date new:', task.find(item => item.id === id).date);
-
-    if (updatedName !== null && updatedEmail !== null && updatedPhone !== null && updatedEnrol !== null && updatedDate !== null) {
-        const updatedTasks = task.map(item => (
-            item.id === id ? { ...item, name: updatedName, email: updatedEmail, phone: updatedPhone, enrol: updatedEnrol, date: updatedDate } : item
-        ));
-        setTask(updatedTasks);
-        toast.success('Your information has been updated', {
-            autoClose: 1000,
-        });
-    }
-    
-}
-
-const clearForm = () => {
-    setName('');
-    setEmail('');
-    setPhone('');
-    setEnrol('');
-    setDate('');
-}
-
-useEffect(() => {
-    localStorage.setItem('task', JSON.stringify(task));
-}, [task]);
+// localStorage.setTask('task', JSON.stringify(task));
     return(
-        
         <div className="container" style={{
             backgroundColor:'#E5E5E5'
            }}>
@@ -100,102 +57,57 @@ useEffect(() => {
             <form className="form" onSubmit={(e)=>addTask(e)} >
                <div className="form--card">
                <label htmlFor="task_title" className="w-50 d-block mx-auto">
-                    <p>Enter task name</p>
+                    <p>Mavzu nomi:</p>
                     <input type="text"
                         id="task_title"
                         value={name}
                         onChange={(e => setName(e.target.value))}
-                        required
+                        placeholder="Mavzuni kiriting:"
                     />
                 </label>
                </div>
                <div className="form--card">
                 <label htmlFor="task_email" >
-                    <p>Enter task email</p>
-                    <input type="email"
+                    <p>Document file:</p>
+                    <input type="file"
                         required
                         id="task_email"
                         value={email}
                         onChange={(e => setEmail(e.target.value))}
+                        
                     />
                 </label>
                 </div>
                <div className="form--card">
                <label htmlFor="task_phone">
-                    <p className="text-primary fw-bold text-uppercase">Enter task phone</p>
-                    <input type="tel"
+                    <p className="text-primary fw-bold text-uppercase">PPT file:</p>
+                    <input type="file"
                         required
                         id="task_phone"
                         value={phone}
-                        name="phone"
-                        placeholder="+998"
-                        pattern="[+]?[0-9]{3} [(][0-9]{2}[)] [0-9]{3}-[0-9]{2}-[0-9]{2}"
                         onChange={(e => setPhone(e.target.value))}
+                        
                     />
                 </label>
                </div>
                 <div className="form--card">
                 <label htmlFor="task_enroll">
-                    <p className="text-primary fw-bold text-uppercase">Enter task enroll</p>
-                    <input type="number"
+                    <p className="text-primary fw-bold text-uppercase">Videoni</p>
+                    <input type="file"
                         required
                         id="task_enroll"
                         value={enrol}
-                        onChange={(e => setEnrol(e.target.value))}  
+                        onChange={(e => setEnrol(e.target.value))}          
                     />
                 </label>
                 </div>
-               <div className="form--card">
-               <label htmlFor="task_date">
-                    <p className="text-primary fw-bold text-uppercase">Enter task date</p>
-                    <input type="date"
-                        required
-                        id="task_date"
-                        value={date}
-                        onChange={(e => setDate(e.target.value))}                   
-                    />
-                </label>
-               </div>
-              <div className="form--card">
-              <button  className="form--card__btn" type="sumbit" onChange={()=>newTask()}>Add new task  </button>
+              <div className="form--card mb-5">
+              <button  className="form--card__btn" type="sumbit" onChange={()=>newTask()}>Add new task </button>
               </div>
             </form>
             </div>
-            <div className="shadow p-5 w-75 mx-auto">
 
-<table className="table" style={{
-    marginBottom:'25px'
-}} >
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Enrol Number</th>
-            <th>Date of admission </th>
-            <th></th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody >
-        {task?.map((item)=>{
-            return(
-        <tr key={item.id}>
-            <td>{item.name}</td>
-            <td>{item.email}</td>
-            <td>{item.phone}</td>
-            <td>{item.enrol}</td>
-            <td>{item.date}</td>
-            <td><button onClick={() => editTask(item.id)} className="edit--btn "><img src={edit} alt="pen-icon" /></button></td>
-            <td><button type="sumbit" onClick={() => removeTask(item.id)} className="edit--btn"><img src={delet} alt="delet icon" /></button></td>
-        </tr>
-            )
-        }) }
-
-    </tbody>
-</table>
-<ToastContainer />
-</div>
+            
         </div>
     )
 }

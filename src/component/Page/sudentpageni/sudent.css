@@ -1,6 +1,6 @@
 
 
-.sudetnt-page--header{
+.student-page--header{
     display: flex;
     justify-content: space-between;
     padding-top: 30px;
@@ -26,6 +26,11 @@
     background-color: yellowgreen;
     color: #fff;
     cursor: pointer;
+}
+.edit--btn{
+  /* background-color: #e5e5e5; */
+  border: none;
+  cursor: pointer;
 }
 
 .add--btn:hover{
