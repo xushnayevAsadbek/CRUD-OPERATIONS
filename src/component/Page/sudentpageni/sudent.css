@@ -37,10 +37,30 @@
     background-color: #fff;
     color: #FEAF00;
 }
-
+.form--card__btn:hover{
+ background-color: blue;
+ color: #fff;
+ cursor: pointer;
+ transition: color 0.5s ease;
+}
+.form--card__btn1{
+  background-color: blue;
+  color: white;
+  padding: 8px 10px;
+    border-radius: 20px;
+    border: none;
+    width: 150px;
+    cursor: pointer;
+ }
+ .form--card__btn1:hover{
+  background-color: yellowgreen;
+ transition: color 0.5s ease;
+color: blue;
+ }
 .back--btn:hover{
     background-color: greenyellow;
     color: #fff;
+    transition: color 0.5s ease;
 }
 
 table {

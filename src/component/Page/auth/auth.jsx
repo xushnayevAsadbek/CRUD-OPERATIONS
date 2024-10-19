@@ -60,7 +60,7 @@ export const Auth = () => {
   };
 
   return (
-    <div className='container' style={{ backgroundColor: '#E5E5E5' }}>
+    <div className='container-auth' style={{ backgroundColor: '#E5E5E5' }}>
       {load && <Loader />}
       <div className='auth--card'>
         <div>

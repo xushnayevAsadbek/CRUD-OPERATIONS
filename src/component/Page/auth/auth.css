@@ -143,3 +143,9 @@ color: #6C6C6C;
     color: #FEAF00;
     padding-left: 3px;
 }
+
+.container-auth{
+    padding: 0;
+    margin: 0;
+    float: none !important;
+}
