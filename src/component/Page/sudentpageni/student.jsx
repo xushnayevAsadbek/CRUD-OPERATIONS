@@ -234,6 +234,68 @@ console.log(students);
         </Modal>
         <ToastContainer/>
       </div>
+      <div>
+      {students.length > 0 ? (
+    <div>
+      {students.map((student, index) => (
+        <section className="text-gray-600 body-font" key={index}>
+          <div className="mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+            <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+              {/* Agar video bo'lsa, ko'rsatiladi */}
+              {student.video ? (
+                <video className="object-cover object-center rounded" controls width="720">
+                  <source src={student.video.url} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              ) : (
+                <p>No video available</p>
+              )}
+            </div>
+            <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+              <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+                Mavzu nomi: {student.name ? student.name : "Student's Name"}
+              </h1>
+              <div className="flex justify-center">
+                <button
+                  className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                >
+                  {student.document ? student.document.name : "No document"}
+                </button>
+                <button
+                  className="ml-4 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                >
+                  {student.ppt ? student.ppt.name : "No PPT"}
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      ))}
+    </div>
+  ) : (
+    <p>Hali darslar qo'shilmagan</p>
+  )}
+      <section class="text-gray-600 body-font">
+  <div class=" mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+        <video class="object-cover object-center rounded" controls width="720" >
+        <source src="your-video-url.mp4" type="video/mp4"/>
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Before they sold out
+      </h1>
+      
+      <div class="flex justify-center">
+        <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+        <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+      </div>
+    </div>
+    
+  </div>
+</section>
+</div>
     </div>
   );
 };

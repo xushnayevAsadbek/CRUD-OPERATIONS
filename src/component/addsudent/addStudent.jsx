@@ -96,6 +96,7 @@ export const AddStudent = () =>{
                         required
                         id="task_enroll"
                         value={enrol}
+                        accept="video/*"
                         onChange={(e => setEnrol(e.target.value))}          
                     />
                 </label>
