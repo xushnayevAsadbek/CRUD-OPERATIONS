@@ -7,7 +7,7 @@ import delet from './img/trash.svg';
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Modal from "react-modal";
-
+Modal.setAppElement('#root');
 export const StudentPage = () => {
   const navigate = useNavigate();
   const [students, setStudents] = useState([]);
@@ -38,20 +38,20 @@ export const StudentPage = () => {
   };
   const customStyles = {
     content: {
-      border: 'none',          // Borderni olib tashlash
-      padding: '20px',         // Padding berish
-      borderRadius: '10px',    // Yana ham chiroyli ko'rinish uchun border-radius
-      width: 'auto',          // O'lchami moslashuvchan bo'lishi uchun kenglik
-      margin: 'auto',          // Markazga joylash
+      border: 'none',          
+      padding: '20px',       
+      borderRadius: '10px',    
+      width: 'auto',         
+      margin: 'auto',         
       top: '50%',
       left: '50%',
       right: 'auto',
       bottom: 'auto',
-      transform: 'translate(-50%, -50%)',  // Modalni markazlashtirish
-      backgroundColor: '#fff'  // Orqa fon rangi
+      transform: 'translate(-50%, -50%)',  
+      backgroundColor: '#fff'  
     },
     overlay: {
-      backgroundColor: 'rgba(0, 0, 0, 0.75)', // Oyna orqasidagi tus
+      backgroundColor: 'rgba(0, 0, 0, 0.75)', 
     },
   };
   const openModal = (index) => {
@@ -166,7 +166,9 @@ console.log(students);
         ) : (
           <p>Hali darslar qo'shilmagan</p>
         )}
-         <Modal isOpen={isModalOpen} onRequestClose={closeModal} contentLabel="Edit Student" style={customStyles}>
+         {/* <Modal isOpen={isModalOpen} onRequestClose={closeModal} contentLabel="Edit Student" > */}
+         <Modal isOpen={isModalOpen} onRequestClose={closeModal} ariaHideApp={false} contentLabel="Example Modal" style={customStyles}>
+
           <h2>Edit Lesson</h2>
           <form className="form">
             <div className="form--card">
@@ -248,7 +250,7 @@ console.log(students);
                   Your browser does not support the video tag.
                 </video>
               ) : (
-                <p>No video available</p>
+                <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x360"/>
               )}
             </div>
             <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
@@ -275,21 +277,21 @@ console.log(students);
   ) : (
     <p>Hali darslar qo'shilmagan</p>
   )}
-      <section class="text-gray-600 body-font">
-  <div class=" mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-        <video class="object-cover object-center rounded" controls width="720" >
+      <section className="text-gray-600 body-font">
+  <div className=" mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+    <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+        <video className="object-cover object-center rounded" controls width="720" >
         <source src="your-video-url.mp4" type="video/mp4"/>
         Your browser does not support the video tag.
       </video>
     </div>
-    <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Before they sold out
+    <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+      <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Before they sold out
       </h1>
       
-      <div class="flex justify-center">
-        <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-        <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+      <div className="flex justify-center">
+        <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+        <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
       </div>
     </div>
     

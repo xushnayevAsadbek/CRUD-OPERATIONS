@@ -72,6 +72,7 @@ export const AddStudent = () =>{
                         required
                         id="task_email"
                         value={email}
+                        accept=".pdf,.doc,.docx"
                         onChange={(e => setEmail(e.target.value))}
                         
                     />
@@ -84,6 +85,7 @@ export const AddStudent = () =>{
                         required
                         id="task_phone"
                         value={phone}
+                        accept=".ppt,.pptx"
                         onChange={(e => setPhone(e.target.value))}
                         
                     />
