@@ -45,7 +45,7 @@ export const Header = () => {
                         </p>
                     </NavLink>
 
-                    <NavLink to="/course" className='sider-box' >
+                    <p to="/course" className='sider-box' >
                         <SnippetsOutlined  style={{
                             paddingLeft: '45px',
                         }} />
@@ -53,7 +53,7 @@ export const Header = () => {
 
                             Course
                         </p>
-                    </NavLink>
+                    </p>
 
 
                     <NavLink to="/student" className='sider-box'>
@@ -66,7 +66,7 @@ export const Header = () => {
                         </p>
 
                     </NavLink>
-                    <NavLink to="/payment" className='sider-box'>
+                    <p  className='sider-box'>
                         <MoneyCollectOutlined style={{
                             paddingLeft: '45px',
                         }} />
@@ -74,7 +74,7 @@ export const Header = () => {
                         <p className='sider-box__text'>
                             Payment
                         </p>
-                    </NavLink>
+                    </p>
                     <NavLink to="/user" className='sider-box'>
                         <HomeOutlined style={{
                             paddingLeft: '45px',
@@ -84,7 +84,7 @@ export const Header = () => {
                             Subject
                         </p>
                     </NavLink>
-                    <NavLink to="/setting" className='sider-box'>
+                    <p to="/setting" className='sider-box'>
                         <HomeOutlined style={{
                             paddingLeft: '45px',
                         }} />
@@ -92,7 +92,7 @@ export const Header = () => {
                         <p className='sider-box__text'>
                             Settings
                         </p>
-                    </NavLink>
+                    </p>
                     
                 </div>
                 <NavLink to="/auth/login" style={{
