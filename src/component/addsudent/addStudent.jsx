@@ -1,6 +1,10 @@
 import { useState  } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { StudentPage } from "../Page/sudentpageni/student";
+import { User } from "../Page/user/user";
+import { AddAdminSubject } from "./addAdminSubject";
+import { AddLesson } from "./addLesson";
 import "./addstudent.css"
 import AppSubject from "./addsubject";
 
@@ -43,7 +47,8 @@ export const AddStudent = () =>{
 }
 // localStorage.setTask('task', JSON.stringify(task));
     return(
-        <div className="container" style={{
+        <div>
+            <div className="container" style={{
             backgroundColor:'#E5E5E5'
            }}>
             <h2 className="sudetnt-page--add">
@@ -109,61 +114,11 @@ export const AddStudent = () =>{
             </form>
             </div>
             
-            {/* {isModalOpen && (
-                <div className="modal">
-                    <div className="modal-content">
-                        <span className="close" onClick={closeModal}>&times;</span>
-                        <h2>Add Student</h2>
-                        <form className="form" onSubmit={addTask}>
-                            <div className="form--card">
-                                <label htmlFor="task_title" className="w-50 d-block mx-auto">
-                                    <p>Mavzu nomi:</p>
-                                    <input type="text"
-                                        id="task_title"
-                                        value={name}
-                                        onChange={(e) => setName(e.target.value)}
-                                        placeholder="Mavzuni kiriting:"
-                                    />
-                                </label>
-                            </div>
-                            <div className="form--card">
-                                <label htmlFor="task_email">
-                                    <p>Document file:</p>
-                                    <input type="file"
-                                        required
-                                        id="task_email"
-                                        onChange={(e) => setEmail(e.target.files[0])}
-                                    />
-                                </label>
-                            </div>
-                            <div className="form--card">
-                                <label htmlFor="task_phone">
-                                    <p className="text-primary fw-bold text-uppercase">PPT file:</p>
-                                    <input type="file"
-                                        required
-                                        id="task_phone"
-                                        onChange={(e) => setPhone(e.target.files[0])}
-                                    />
-                                </label>
-                            </div>
-                            <div className="form--card">
-                                <label htmlFor="task_enroll">
-                                    <p className="text-primary fw-bold text-uppercase">Videoni</p>
-                                    <input type="file"
-                                        required
-                                        id="task_enroll"
-                                        onChange={(e) => setEnrol(e.target.files[0])}
-                                    />
-                                </label>
-                            </div>
-                            <div className="form--card mb-5">
-                                <button className="form--card__btn" type="submit">Add new task</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            )} */}
-
+              
         </div>
+         <AddLesson/>
+         <AddAdminSubject/>
+        </div>
+        
     );
 }

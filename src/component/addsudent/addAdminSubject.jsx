@@ -1,25 +1,31 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import './user.css'
+import { ToastContainer , toast} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import '../Page/user/user.css'
 
-export const User = () => {
+export const AddAdminSubject = () => {
   const [subjects, setSubjects] = useState([]); 
-  const navigate =useNavigate();
 
   useEffect(() => {
     const storedSubjects = JSON.parse(localStorage.getItem("subjects")) || [];
     setSubjects(storedSubjects);
   }, []);
-  const onBack = () =>{
-    navigate(-1)
-}
-
+  
+const handleDelete = (id) => {
+    const updatedSubjects = subjects.filter(subject => subject.id !== id);
+    setSubjects(updatedSubjects);
+    localStorage.setItem("subjects", JSON.stringify(updatedSubjects)); 
+    toast.info(`You have deleted your information`, {
+        autoClose: 1000,
+    })
+  };
     return (
         <div  className="container"  style={{
-            backgroundColor:'#E5E5E5'
+            backgroundColor:'#E5E5E5',
+            marginBottom:"25px"
            }}>
-            <button className="back--btn  pt-9 active" style={{
-          marginTop:'20px'}} onClick={onBack}>onBack</button>
+         
          <div style={{
                     width: "100%",
                     
@@ -43,7 +49,11 @@ export const User = () => {
                <NavLink to="/student"> 
                <p className="subjects-text"> {subject.name}</p>
                </NavLink>
-               
+               <button
+                  className="delete--btn"
+                  onClick={() => handleDelete(subject.id)}>
+                  O'chirish
+                </button>
               </li>
                 
               
@@ -53,7 +63,7 @@ export const User = () => {
       ) : (
         <p className="subjects-text">Hali fanlar qo'shilmagan.</p>
       )}
-       
+        <ToastContainer/>
 
         </div>
         
